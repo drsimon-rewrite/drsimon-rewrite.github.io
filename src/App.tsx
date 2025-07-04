@@ -10,21 +10,10 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "./components/ui/button";
 import { Separator } from "./components/ui/separator";
 
-const abstract = `In real life, even if we do not know the exact definition of a word in a sentence, we often infer its meaning by observing the surrounding context or the actions of others. 
-This natural context-driven process of human learning can be emulated in video understanding using large video–language models (Video-LLMs). However, current Video-LLMs often struggle with grounding when queries rely on domain-specific terminology rather than visually descriptive language, a common scenario in medical video question answering (MedVidQA). To address this, we propose \textbf{\ours} (Domain-wise Rewrite for Segment-Informed In-video Medical Oversight Network), a query‑rewriting framework designed to enhance video grounding in medical videos. \ours\ segments a video into coarse events, rewrites the domain-specific query in visually explicit alternatives for each segment using contextual cues, and selects the segment that best aligns with a semantically rewritten query for fine-grained localization. Through this approach, \ours\ (i) bridges the lexical gap between medical terminology and visual content, (ii) improves the robustness to previously unseen vocabulary, and (iii) scales effectively to longer videos through event-level pruning.`;
-
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6 },
-};
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
 };
 
 // Game component
@@ -401,21 +390,8 @@ export default function App() {
 
   return (
     <main className="min-h-screen text-gray-900 font-Inter relative overflow-hidden">
-      {/* Animated Background
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 left-40 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-      </div> */}
-
-      {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center py-20 px-4">
-        <motion.div
-          className="text-center max-w-4xl mx-auto relative"
-          initial="initial"
-          animate="animate"
-          variants={staggerContainer}
-        >
+        <motion.div className="text-center max-w-4xl mx-auto relative">
           <motion.h1
             className="text-6xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-orange-700 via-amber-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg"
             variants={fadeInUp}
@@ -439,10 +415,7 @@ export default function App() {
             Network
           </motion.h2>
 
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            variants={fadeInUp}
-          >
+          <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="https://github.com/drsimon-rewrite/Dr.Simon"
               target="_blank"
@@ -464,14 +437,6 @@ export default function App() {
             </a>
           </motion.div>
         </motion.div>
-
-        {/* <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <ArrowDownIcon className="w-6 h-6 text-gray-500" />
-        </motion.div> */}
       </section>
 
       <Separator className="my-3" />
@@ -482,7 +447,31 @@ export default function App() {
           <div className="flex items-center justify-center mb-8">
             <h2 className="text-2xl font-bold text-gray-800">Abstract</h2>
           </div>
-          <p className="text-lg leading-relaxed text-gray-700 ">{abstract}</p>
+          <p className="text-lg leading-relaxed text-gray-700">
+            Humans are capable of understanding language, even when encountering
+            unfamiliar words. Rather than requiring precise definitions, we
+            often infer meaning from the surrounding linguistic context or
+            visual cues. Inspired by this capability, we address the
+            long-standing challenge of aligning medical terminology in queries
+            with visual content for temporal grounding in medical videos. While
+            bridging this gap typically relies on costly, domain-specific
+            fine-tuning, such methods frequently lack generalization and
+            struggle to adapt to newly coined or rarely encountered terms. To
+            deal with this limitation, we present <strong>DR.SIMON</strong> (
+            <strong>D</strong>omain-wise <strong>R</strong>ewrite for{" "}
+            <strong>S</strong>egment-<strong>I</strong>nformed{" "}
+            <strong>M</strong>
+            edical <strong>O</strong>versight <strong>N</strong>etwork ), a
+            simple yet efficient query-rewriting framework that runs on a frozen
+            backbone. DR.SIMON first segments the video into coarse events, then
+            rewrites the user query into visually explicit paraphrases under
+            global visual context, and finally localizes the most relevant
+            segment. Evaluated on MedVidCL, DR.SIMON achieves remarkable gains
+            over recent video-LLMs—without any additional training. Our results
+            show that resolving lexical misalignment alone can unlock
+            substantial performance improvements and provide a scalable route to
+            keep pace with continually emerging medical vocabulary.
+          </p>
         </div>
       </section>
 
