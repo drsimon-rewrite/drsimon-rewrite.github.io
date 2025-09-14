@@ -592,7 +592,7 @@ export default function App() {
               whileHover={{ scale: 1.01 }}
               onClick={() => setIsPipelineOpen(true)}
             />
-            <p className="mt-2 text-center text-sm text-gray-500">Tap image to zoom</p>
+            <p className="mt-2 text-center text-sm text-gray-500"></p>
           </motion.div>
         </div>
       </section>
