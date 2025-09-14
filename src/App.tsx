@@ -408,12 +408,77 @@ export default function App() {
           </motion.h1>
 
           <motion.h2
-            className="text-xl md:text-2xl font-semibold text-gray-700 mb-8 leading-relaxed"
+            className="text-xl md:text-2xl font-semibold text-gray-700 leading-relaxed"
             variants={fadeInUp}
           >
-            Domain-wise Rewrite for Segment-Informed In-video Medical Oversight
+            DR.SIMON: Domain-wise Rewrite for Segment-Informed Medical Oversight
             Network
           </motion.h2>
+
+          {/* Authors and Affiliations */}
+          <motion.div
+            className="mt-6 mb-8 text-sm md:text-base text-gray-700 max-w-3xl mx-auto leading-relaxed"
+            variants={fadeInUp}
+          >
+            <p className="font-medium text-center">
+              <a
+                href="https://seohyun8825.github.io/seohyunlee/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:no-underline"
+              >
+                Seohyun Lee
+              </a>
+              <sup>1</sup>,
+              {" "}
+              <a
+                href="https://github.com/imsuviiix"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:no-underline"
+              >
+                Suhyun Choe
+              </a>
+              <sup>2</sup><sup>*</sup>,
+              {" "}
+              <a
+                href="https://github.com/allchiever"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:no-underline"
+              >
+                Jaeha Choi
+              </a>
+              <sup>3</sup><sup>*</sup>, and
+              {" "}
+              <a
+                href="https://jinleevv.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:no-underline"
+              >
+                Jin Won Lee
+              </a>
+              <sup>4</sup><sup>*</sup>
+            </p>
+            <div className="mt-3 text-center space-y-1">
+              <p>
+                <sup>1</sup> Korea University, Seoul, Republic of Korea
+              </p>
+              <p>
+                <sup>2</sup> Yonsei University, Seoul, Republic of Korea
+              </p>
+              <p>
+                <sup>3</sup> Incheon National University, Incheon, Republic of Korea
+              </p>
+              <p>
+                <sup>4</sup> McGill University, Montreal, Canada
+              </p>
+            </div>
+            <p className="mt-4 text-center text-gray-600">
+              MedAGI workshop @ MICCAI 2025, oral presentation
+            </p>
+          </motion.div>
 
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
@@ -433,6 +498,22 @@ export default function App() {
               >
                 <NewspaperIcon className="w-5 h-5" />
                 Read Paper
+              </Button>
+            </a>
+            <a href="/dr.simon_poster.pdf" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="outline"
+                className=" border-gray-300 text-gray-700 px-8 py-6 rounded-xl flex items-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
+              >
+                Poster
+              </Button>
+            </a>
+            <a href="/dr.simon_presentation.pdf" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="outline"
+                className=" border-gray-300 text-gray-700 px-8 py-6 rounded-xl flex items-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
+              >
+                Slides
               </Button>
             </a>
           </motion.div>
@@ -516,9 +597,9 @@ export default function App() {
                 <span className="text-orange-400">@article</span>
                 {`{2025drsimon,\n`}
                 <span className="text-orange-400"> title</span>
-                {`     = {DR.SIMON: Domain-wise Rewrite for Segment-Informed In-video Medical Oversight Network},\n`}
+                {`     = {DR.SIMON: Domain-wise Rewrite for Segment-Informed Medical Oversight Network},\n`}
                 <span className="text-orange-400"> author</span>
-                {`    = {},\n`}
+                {`    = {Seohyun Lee, Suhyun Choe, Jaeha Choi, Jin Won Lee},\n`}
                 <span className="text-orange-400"> journal</span>
                 {`   = {arXiv preprint arXiv:},\n`}
                 <span className="text-orange-400"> year</span>
