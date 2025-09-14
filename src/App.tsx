@@ -573,11 +573,21 @@ export default function App() {
             domain-specific queries for enhanced video grounding.
           </p>
 
-          <motion.div className="px-2 sm:px-4 md:px-8">
+          {/* Desktop: original styling, no zoom/lightbox */}
+          <motion.div className="hidden md:block p-8">
             <motion.img
               src={pipelineImg}
               alt="DR.SIMON Pipeline"
-              className="block mx-auto w-full h-auto max-w-none md:max-w-4xl border rounded-xl shadow-lg cursor-zoom-in"
+              className="border p-2 rounded-xl shadow-lg mx-auto w-full max-w-4xl"
+            />
+          </motion.div>
+
+          {/* Mobile: full-width with tap-to-zoom */}
+          <motion.div className="block md:hidden px-2 sm:px-4">
+            <motion.img
+              src={pipelineImg}
+              alt="DR.SIMON Pipeline"
+              className="block mx-auto w-full h-auto max-w-none border rounded-xl shadow-lg cursor-zoom-in"
               loading="lazy"
               whileHover={{ scale: 1.01 }}
               onClick={() => setIsPipelineOpen(true)}
