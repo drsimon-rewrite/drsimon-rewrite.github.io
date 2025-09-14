@@ -377,6 +377,7 @@ function RedPandaGame({
 export default function App() {
   const [logoClickCount, setLogoClickCount] = useState(0);
   const [isGameOpen, setIsGameOpen] = useState(false);
+  const [isPipelineOpen, setIsPipelineOpen] = useState(false);
 
   const handleLogoClick = () => {
     const newCount = logoClickCount + 1;
@@ -560,7 +561,7 @@ export default function App() {
 
       {/* Pipeline Section */}
       <section className="relative">
-        <div className="max-w-6xl mx-auto p-14">
+        <div className="max-w-6xl mx-auto px-4 py-10 md:p-14">
           <div className="flex items-center justify-center mb-8">
             <ChartBarIcon className="w-8 h-8 mr-3 text-gray-800" />
             <h2 className="text-2xl font-bold text-gray-800">
@@ -572,15 +573,42 @@ export default function App() {
             domain-specific queries for enhanced video grounding.
           </p>
 
-          <motion.div className="p-8">
+          <motion.div className="px-2 sm:px-4 md:px-8">
             <motion.img
               src={pipelineImg}
               alt="DR.SIMON Pipeline"
-              className="border p-2 rounded-xl shadow-lg mx-auto w-full max-w-4xl"
+              className="block mx-auto w-full h-auto max-w-none md:max-w-4xl border rounded-xl shadow-lg cursor-zoom-in"
+              loading="lazy"
+              whileHover={{ scale: 1.01 }}
+              onClick={() => setIsPipelineOpen(true)}
             />
+            <p className="mt-2 text-center text-sm text-gray-500">Tap image to zoom</p>
           </motion.div>
         </div>
       </section>
+
+      {/* Pipeline Lightbox */}
+      <AnimatePresence>
+        {isPipelineOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
+            onClick={() => setIsPipelineOpen(false)}
+          >
+            <motion.img
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              src={pipelineImg}
+              alt="DR.SIMON Pipeline Fullscreen"
+              className="max-w-[95vw] max-h-[90vh] w-auto h-auto rounded-xl shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <Separator className="my-3" />
 
