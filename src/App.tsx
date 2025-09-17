@@ -475,6 +475,9 @@ export default function App() {
               <p>
                 <sup>4</sup> McGill University, Montreal, Canada
               </p>
+              <p className="text-sm text-gray-600 mt-2">
+                <sup>*</sup> equally contributed as second authors, alphabetic
+              </p>
             </div>
             <p className="mt-4 text-center text-gray-600">
               MedAGI workshop @ MICCAI 2025, oral presentation
@@ -492,7 +495,7 @@ export default function App() {
                 View Code
               </Button>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="/docs/DR_SIMON.pdf" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
                 className=" border-gray-300 text-gray-700 px-8 py-6 rounded-xl flex items-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
