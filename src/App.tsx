@@ -423,7 +423,7 @@ export default function App() {
           >
             <p className="font-medium text-center">
               <a
-                href="https://seohyun8825.github.io/seohyunlee/"
+                href="http://www.seohyunleee.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:no-underline"
