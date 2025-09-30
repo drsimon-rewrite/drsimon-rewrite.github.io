@@ -401,7 +401,7 @@ export default function App() {
             <motion.img
               src="/logo.png"
               alt="DR.SIMON Logo"
-              className="w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-lg cursor-pointer absolute top-1/2 right-32 transform -translate-y-1/2"
+              className="hidden md:block w-20 h-20 md:w-28 md:h-28 object-contain drop-shadow-lg cursor-pointer absolute top-1/2 right-32 transform -translate-y-1/2"
               whileHover={{ scale: 1.1, rotate: -5 }}
               whileTap={{ scale: 0.9 }}
               onClick={handleLogoClick}
@@ -430,8 +430,7 @@ export default function App() {
               >
                 Seohyun Lee
               </a>
-              <sup>1</sup>,
-              {" "}
+              <sup>1</sup>,{" "}
               <a
                 href="https://github.com/imsuviiix"
                 target="_blank"
@@ -440,8 +439,8 @@ export default function App() {
               >
                 Suhyun Choe
               </a>
-              <sup>2</sup><sup>*</sup>,
-              {" "}
+              <sup>2</sup>
+              <sup>*</sup>,{" "}
               <a
                 href="https://github.com/allchiever"
                 target="_blank"
@@ -450,8 +449,8 @@ export default function App() {
               >
                 Jaeha Choi
               </a>
-              <sup>3</sup><sup>*</sup>, and
-              {" "}
+              <sup>3</sup>
+              <sup>*</sup>, and{" "}
               <a
                 href="https://jinleevv.dev"
                 target="_blank"
@@ -460,7 +459,8 @@ export default function App() {
               >
                 Jin Won Lee
               </a>
-              <sup>4</sup><sup>*</sup>
+              <sup>4</sup>
+              <sup>*</sup>
             </p>
             <div className="mt-3 text-center space-y-1">
               <p>
@@ -470,7 +470,8 @@ export default function App() {
                 <sup>2</sup> Yonsei University, Seoul, Republic of Korea
               </p>
               <p>
-                <sup>3</sup> Incheon National University, Incheon, Republic of Korea
+                <sup>3</sup> Incheon National University, Incheon, Republic of
+                Korea
               </p>
               <p>
                 <sup>4</sup> McGill University, Montreal, Canada
@@ -484,7 +485,7 @@ export default function App() {
             </p>
           </motion.div>
 
-          <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <motion.div className="flex flex-wrap gap-4 justify-center items-center">
             <a
               href="https://github.com/drsimon-rewrite/Dr.Simon"
               target="_blank"
@@ -504,7 +505,11 @@ export default function App() {
                 Read Paper
               </Button>
             </a>
-            <a href="/dr.simon_poster.pdf" target="_blank" rel="noopener noreferrer">
+            <a
+              href="/dr.simon_poster.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 variant="outline"
                 className=" border-gray-300 text-gray-700 px-8 py-6 rounded-xl flex items-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
@@ -512,7 +517,11 @@ export default function App() {
                 Poster
               </Button>
             </a>
-            <a href="/dr.simon_presentation.pdf" target="_blank" rel="noopener noreferrer">
+            <a
+              href="/dr.simon_presentation.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 variant="outline"
                 className=" border-gray-300 text-gray-700 px-8 py-6 rounded-xl flex items-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 font-medium"
